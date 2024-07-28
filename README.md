@@ -4,6 +4,7 @@
 
 [![GitHub last commit][last-commit-shield]][last-commit-url]
 [![CI Status][ci-status-shield]][ci-status-url]
+[![Maintainability][maintainability-shield]][maintainability-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
@@ -82,6 +83,9 @@ This project is licensed under the MIT License.
 [last-commit-url]: https://github.com/jobearrr/time-swap/commits/master
 [ci-status-shield]: https://github.com/jobearrr/time-swap/actions/workflows/static.yml/badge.svg
 [ci-status-url]: https://github.com/jobearrr/time-swap/actions/workflows/static.yml
+
+[maintainability-shield]: https://api.codeclimate.com/v1/badges/e5086485a346d3c0cb65/maintainability
+[maintainability-url]: https://codeclimate.com/github/jobearrr/time-swap/maintainability
 
 [license-shield]: https://img.shields.io/github/license/jobearrr/time-swap.svg?style=flat
 [license-url]: https://github.com/jobearrr/time-swap?tab=MIT-1-ov-file#readme
