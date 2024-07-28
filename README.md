@@ -2,7 +2,10 @@
 
 **`⏳ Time Swap`** is a sleek, simple, web application that allows users to effortlessly convert between date/time and Unix timestamp.
 
-Input your date/time, select your timezone, and swap between human-readable date/time and Unix epoch in just one click!
+[![GitHub last commit][last-commit-shield]][last-commit-url]
+[![CI Status][ci-status-shield]][ci-status-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 ## Features
 - Convert date/time to Unix timestamp
@@ -73,3 +76,14 @@ Contributions are welcome! If you have any ideas, suggestions, or bug reports, f
 
 ## License
 This project is licensed under the MIT License.
+
+<!-- Markdown references https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[last-commit-shield]: https://img.shields.io/github/last-commit/jobearrr/time-swap?style=flat
+[last-commit-url]: https://github.com/jobearrr/time-swap/commits/master
+[ci-status-shield]: https://github.com/jobearrr/time-swap/actions/workflows/static.yml/badge.svg
+[ci-status-url]: https://github.com/jobearrr/time-swap/actions/workflows/static.yml
+
+[license-shield]: https://img.shields.io/github/license/jobearrr/time-swap.svg?style=flat
+[license-url]: https://github.com/jobearrr/time-swap?tab=MIT-1-ov-file#readme
+[linkedin-shield]: https://img.shields.io/badge/-jobertsa-0072b1?style=flat&logo=Linkedin&logoColor=white
+[linkedin-url]: https://www.linkedin.com/in/jobertsa
