@@ -87,7 +87,7 @@ This project is licensed under the MIT License.
 [maintainability-shield]: https://api.codeclimate.com/v1/badges/e5086485a346d3c0cb65/maintainability
 [maintainability-url]: https://codeclimate.com/github/jobearrr/time-swap/maintainability
 
-[license-shield]: https://img.shields.io/github/license/jobearrr/time-swap.svg?style=flat
+[license-shield]: https://img.shields.io/github/license/jobearrr/time-swap.svg
 [license-url]: https://github.com/jobearrr/time-swap?tab=MIT-1-ov-file#readme
 [linkedin-shield]: https://img.shields.io/badge/-jobertsa-0072b1?style=flat&logo=Linkedin&logoColor=white
 [linkedin-url]: https://www.linkedin.com/in/jobertsa
