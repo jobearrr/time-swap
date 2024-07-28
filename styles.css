@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group,
+.output-group,
+.checkbox-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label,
+.output-group label,
+.checkbox-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-group input,
+.output-group input,
+.input-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input {
+    margin-right: 5px;
+    width: auto; /* Ensure checkbox does not stretch */
+}
+
+.checkbox-group label {
+    margin-bottom: 0; /* Remove bottom margin for label in checkbox group */
+}
+
+button {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 15px; /* Add some margin below the button */
+}
+
+button:hover {
+    background-color: #e55a00;
+}

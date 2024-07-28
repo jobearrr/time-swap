@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>⏳ Time Swap</title>
+        <link rel="stylesheet" href="styles.css" />
+        <!-- Google Analytics -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-1NG4B7VHYW"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "G-1NG4B7VHYW");
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>⏳ Time Swap</h1>
+            <div class="converter">
+                <div class="input-group">
+                    <label for="datetime">Date/Time:</label>
+                    <input type="datetime-local" id="datetime" step="1" />
+                </div>
+                <div class="input-group">
+                    <label for="timezone">Timezone:</label>
+                    <select id="timezone"></select>
+                </div>
+                <div class="input-group checkbox-group">
+                    <input type="checkbox" id="gmtCheckbox" />
+                    <label for="gmtCheckbox">GMT</label>
+                </div>
+                <button id="toUnix">Convert to Unix Timestamp</button>
+                <div class="output-group">
+                    <label for="timestamp">Unix Timestamp:</label>
+                    <input type="text" id="timestamp" readonly />
+                </div>
+                <button id="toDatetime">Convert to Date/Time</button>
+                <div class="output-group">
+                    <label for="convertedDatetime">Converted Date/Time:</label>
+                    <input type="text" id="convertedDatetime" readonly />
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
