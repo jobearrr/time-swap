@@ -9,12 +9,12 @@ A sleek, simple, web app that allows users to effortlessly convert between date/
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 ## Features
-- Convert date/time to Unix timestamp
-- Convert Unix timestamp to date/time
+- Automatically convert date/time to Unix timestamp and vice-versa
 - Support for various time zones
 - Clean, user-friendly interface
 - Automatically detects and sets the local time zone
 - Option to quickly select GMT timezone
+- Dark/Light mode switcher
 
 ## Technologies Used
 - HTML5
