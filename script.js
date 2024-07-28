@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const timezoneSelect = document.getElementById("timezone");
   const gmtCheckbox = document.getElementById("gmtCheckbox");
+  const modeToggle = document.getElementById("modeToggle");
 
   // Populate the timezone dropdown using Intl.supportedValuesOf
   const timeZones = Intl.supportedValuesOf("timeZone");
@@ -71,4 +72,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const tzDate = new Date(tzString);
     return tzDate.getTime() - localDate.getTime();
   }
+
+  // Dark/Light mode toggle
+  const prefersDarkScheme = window.matchMedia(
+    "(prefers-color-scheme: dark)",
+  ).matches;
+  const currentMode =
+    localStorage.getItem("mode") || (prefersDarkScheme ? "dark" : "light");
+
+  if (currentMode === "dark") {
+    document.body.classList.add("dark-mode");
+    modeToggle.checked = true;
+  } else {
+    modeToggle.checked = false;
+  }
+
+  modeToggle.addEventListener("change", function () {
+    document.body.classList.toggle("dark-mode");
+    const newMode = document.body.classList.contains("dark-mode")
+      ? "dark"
+      : "light";
+    localStorage.setItem("mode", newMode);
+  });
 });
