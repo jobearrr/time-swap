@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const timezoneSelect = document.getElementById("timezone");
   const gmtCheckbox = document.getElementById("gmtCheckbox");
   const modeToggle = document.getElementById("modeToggle");
+  const datetimeInput = document.getElementById("datetime");
+  const timestampInput = document.getElementById("timestamp");
+  const convertedDatetimeInput = document.getElementById("convertedDatetime");
 
   // Populate the timezone dropdown using Intl.supportedValuesOf
   const timeZones = Intl.supportedValuesOf("timeZone");
@@ -17,19 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const localTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   timezoneSelect.value = localTimezone;
 
-  // Toggle timezone select based on GMT checkbox
-  gmtCheckbox.addEventListener("change", function () {
-    if (gmtCheckbox.checked) {
-      timezoneSelect.value = "GMT";
-      timezoneSelect.disabled = true;
-    } else {
-      timezoneSelect.disabled = false;
-      timezoneSelect.value = localTimezone;
-    }
-  });
+  // Initialize with the current date and time
+  const now = new Date();
+  datetimeInput.value = now.toISOString().slice(0, 19);
 
-  document.getElementById("toUnix").addEventListener("click", function () {
-    const datetime = document.getElementById("datetime").value;
+  function updateTimestamp() {
+    const datetime = datetimeInput.value;
     const timezone = gmtCheckbox.checked ? "GMT" : timezoneSelect.value;
     if (datetime) {
       const date = new Date(datetime);
@@ -38,19 +34,17 @@ document.addEventListener("DOMContentLoaded", function () {
         date.getTime() - offset + getTimezoneOffsetMilliseconds(timezone),
       );
       const unixTimestamp = Math.floor(timezoneDate.getTime() / 1000);
-      document.getElementById("timestamp").value = unixTimestamp;
-    } else {
-      alert("Please enter a valid date/time.");
+      timestampInput.value = unixTimestamp;
+      updateConvertedDatetime(unixTimestamp);
     }
-  });
+  }
 
-  document.getElementById("toDatetime").addEventListener("click", function () {
-    const timestamp = document.getElementById("timestamp").value;
+  function updateConvertedDatetime(unixTimestamp) {
     const timezone = gmtCheckbox.checked ? "GMT" : timezoneSelect.value;
-    if (timestamp) {
-      const date = new Date(timestamp * 1000);
+    if (unixTimestamp) {
+      const date = new Date(unixTimestamp * 1000);
       const isoString = date.toISOString().slice(0, 19); // "YYYY-MM-DDTHH:MM:SS"
-      document.getElementById("datetime").value = isoString;
+      datetimeInput.value = isoString;
 
       // Display the converted date/time in a readable format
       const formattedDate = new Intl.DateTimeFormat("en-US", {
@@ -58,11 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
         dateStyle: "full",
         timeStyle: "long",
       }).format(date);
-      document.getElementById("convertedDatetime").value = formattedDate;
-    } else {
-      alert("Please enter a valid Unix timestamp.");
+      convertedDatetimeInput.value = formattedDate;
     }
-  });
+  }
 
   function getTimezoneOffsetMilliseconds(timezone) {
     const now = new Date();
@@ -72,6 +64,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const tzDate = new Date(tzString);
     return tzDate.getTime() - localDate.getTime();
   }
+
+  // Event listeners for automatic updates
+  datetimeInput.addEventListener("input", updateTimestamp);
+  timezoneSelect.addEventListener("change", updateTimestamp);
+  gmtCheckbox.addEventListener("change", function () {
+    timezoneSelect.disabled = gmtCheckbox.checked;
+    updateTimestamp();
+  });
 
   // Dark/Light mode toggle
   const prefersDarkScheme = window.matchMedia(
@@ -94,4 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
       : "light";
     localStorage.setItem("mode", newMode);
   });
+
+  // Initial update
+  updateTimestamp();
 });

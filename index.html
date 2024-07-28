@@ -23,6 +23,10 @@
     <body>
         <div class="container">
             <h1>⏳ Time Swap</h1>
+            <p>
+                Convert between date/time and Unix timestamp automatically as
+                you type.
+            </p>
             <label class="switch">
                 <input type="checkbox" id="modeToggle" />
                 <span class="slider round"></span>
@@ -40,12 +44,10 @@
                     <input type="checkbox" id="gmtCheckbox" />
                     <label for="gmtCheckbox">GMT</label>
                 </div>
-                <button id="toUnix">Convert to Unix Timestamp</button>
                 <div class="output-group">
                     <label for="timestamp">Unix Timestamp:</label>
                     <input type="text" id="timestamp" readonly />
                 </div>
-                <button id="toDatetime">Convert to Date/Time</button>
                 <div class="output-group">
                     <label for="convertedDatetime">Converted Date/Time:</label>
                     <input type="text" id="convertedDatetime" readonly />
