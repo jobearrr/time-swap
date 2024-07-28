@@ -1,6 +1,6 @@
 # `⏳ Time Swap`
 
-**`⏳ Time Swap`** is a sleek, simple, web application that allows users to effortlessly convert between date/time and Unix timestamp.
+A sleek, simple, web app that allows users to effortlessly convert between date/time and Unix timestamp.
 
 [![GitHub last commit][last-commit-shield]][last-commit-url]
 [![CI Status][ci-status-shield]][ci-status-url]
